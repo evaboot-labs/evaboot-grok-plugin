@@ -1,0 +1,15 @@
+{
+  "name": "evaboot",
+  "version": "1.0.0",
+  "description": "Build LinkedIn Sales Navigator searches from a plain-language description, export the leads and accounts they return, and find or verify each lead's professional email, via Evaboot's hosted MCP server. Sign in with your Evaboot account on first connect.",
+  "author": {
+    "name": "Evaboot",
+    "url": "https://evaboot.com",
+    "email": "support@evaboot.com"
+  },
+  "homepage": "https://evaboot.com/mcp",
+  "repository": "https://github.com/evaboot-labs/evaboot-grok-plugin",
+  "license": "MIT",
+  "keywords": ["evaboot", "evaboot sales navigator", "evaboot leads", "evaboot email finder"],
+  "logo": "assets/logo.png"
+}
