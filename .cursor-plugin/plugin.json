@@ -10,5 +10,5 @@
   "repository": "https://github.com/evaboot-labs/evaboot-grok-plugin",
   "license": "MIT",
   "keywords": ["evaboot", "sales navigator", "linkedin leads", "email finder", "email verification", "lead generation"],
-  "logo": "assets/logo.png"
+  "logo": "assets/logo.svg"
 }
