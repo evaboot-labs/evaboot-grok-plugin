@@ -1,6 +1,6 @@
 {
   "name": "evaboot-plugin",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Build Sales Navigator searches, export leads, find and verify emails through Evaboot's hosted MCP server, and use four skills to define your ICP, qualify leads, read buying signals and draft first messages.",
   "author": { "name": "Evaboot", "url": "https://evaboot.com" },
   "homepage": "https://evaboot.com/mcp",
