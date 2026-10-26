@@ -8,7 +8,7 @@
     "email": "support@evaboot.com"
   },
   "homepage": "https://evaboot.com/mcp",
-  "repository": "https://github.com/evaboot-labs/evaboot-grok-plugin",
+  "repository": "https://github.com/evaboot-labs/evaboot-plugin",
   "license": "MIT",
   "keywords": ["evaboot", "evaboot sales navigator", "evaboot leads", "evaboot email finder"],
   "logo": "assets/logo.png"
