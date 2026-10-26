@@ -43,12 +43,14 @@ Grok Build: `grok plugin install https://github.com/evaboot-labs/evaboot-plugin.
 
 </details>
 
-## Four skills, one prospecting loop
+## Five skills, one prospecting loop
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset=".github/assets/skills-dark.png">
   <img src=".github/assets/skills-light.png" alt="Four skills: define your ICP and value prop, read Sales Navigator alerts, qualify leads, write first messages" width="1280">
 </picture>
+
+**Build pipeline** sets up the [Unlimited Leads System](https://evaboot.com/guides/unlimited-leads): one Sales Navigator saved search per intent signal, a weekly Evaboot export of only the new leads, and a lemlist or Instantly campaign that receives each batch, with copy written for that signal.
 
 Your ICP and value prop live in `~/.evaboot/`, so every later skill reuses them. Your agent can also call every [Evaboot MCP tool](https://github.com/evaboot-team/evaboot-mcp) directly: build a search from one sentence, export a list, find or verify an email, set up a recurring export. Nothing is sent to a prospect: you review every message.
 
