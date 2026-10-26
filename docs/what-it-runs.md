@@ -5,7 +5,7 @@
   - `define-icp-and-value-prop` interviews you and writes `~/.evaboot/EVABOOT-ICP.md` and `~/.evaboot/EVABOOT-VALUE-PROP.md`.
   - `qualify-leads` reads `~/.evaboot/EVABOOT-ICP.md` and labels each lead in, out or can't tell.
   - `intent-detection` lists the last 7 days of Sales Navigator lead and account alerts.
-  - `write-outreach-messages` reads `~/.evaboot/EVABOOT-VALUE-PROP.md` and drafts one first message per person. It never sends anything.
+  - `write-outreach-messages` reads `~/.evaboot/EVABOOT-VALUE-PROP.md` and drafts one first message per person, using the Sales Navigator signal columns of an Evaboot export as hooks when a lead has them. It never sends anything.
 
 No hooks, commands or local servers. Nothing else is installed, run in the background, or sent to any other service.
 
