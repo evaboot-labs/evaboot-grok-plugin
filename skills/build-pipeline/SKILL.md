@@ -43,13 +43,13 @@ For each picked signal:
 3. If the ICP has an industry or company size, give the user the link and ask them to add those filters in Sales Navigator, then paste the new URL back. Use that URL from here on.
 4. Show the link, the result count and the builder's assumptions. Ask for a yes.
 5. Call `create_recurring_export` with `search_url` and `frequency` `weekly` unless the user picks another. It saves the search on the user's seat. The first run comes one interval later and holds only new leads.
-6. Call `update_recurring_export` with its `id` as `recurring_id` and `name` `Unlimited Leads · <signal>`.
+6. Call `update_recurring_export` with its `id` as `recurring_id` and `name` `Unlimited Leads · <signal>`. This names it in Evaboot; the saved search keeps its own name in Sales Navigator.
 
 ## Step 2: send each export to its campaign
 
 Ask whether each signal gets its own campaign (recommended) or one shared campaign.
 
-- **lemlist or Instantly:** call `list_integration_targets` with that `type` and show the campaigns. If it fails with 409, call `connect_integration` with that `type` and `auto: true`, give the user the `key_url` it returns to enter their key there, and wait for "done". For each recurring export, after a yes, call `connect_integration` with `type`, `auto: true`, `target_id`, `source: "recurring"`, `recurring_ids: [<recurring export id>]` and `label` `Unlimited Leads · <signal>`.
+- **lemlist or Instantly:** call `list_integration_targets` with that `type` and show the campaigns. If it fails with 409, call `connect_integration` with that `type` and `auto: true`, give the user the `key_url` it returns to enter their key there, and wait for "done". If it fails with 403, the tool account itself refuses the API, for example an Instantly workspace with no paid plan: tell the user what the error says and stop. For each recurring export, after a yes, call `connect_integration` with `type`, `auto: true`, `target_id`, `source: "recurring"`, `recurring_ids: [<recurring export id>]` and `label` `Unlimited Leads · <signal>`.
 - **One shared campaign that is already connected:** call `attach_recurring_export` with its `integration_id`.
 - **Make, Zapier or n8n:** the user builds the scenario in that tool and pastes the webhook URL; a webhook URL is not a secret. Then call `connect_integration` with that `type`, `url`, `auto: true`, `source: "recurring"`, `recurring_ids` and `label`. If it answers `next: test`, ask the user to switch the scenario on, then call `test_integration`.
 
