@@ -1,6 +1,6 @@
 {
   "name": "evaboot",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Build LinkedIn Sales Navigator searches from a plain-language description, export the leads and accounts they return, find and verify each lead's professional email, and push results to your CRM, via Evaboot's hosted MCP server. Sign in with your Evaboot account on first connect; no API key needed.",
   "author": {
     "name": "Evaboot",

@@ -2,13 +2,13 @@
   "name": "evaboot-labs-evaboot-plugin",
   "owner": { "name": "Evaboot", "url": "https://evaboot.com" },
   "metadata": {
-    "description": "The Evaboot plugin: the Evaboot MCP server for Sales Navigator search, lead export and email finding, plus four outreach skills."
+    "description": "The Evaboot plugin: the Evaboot MCP server for Sales Navigator search, lead export and email finding, plus five outreach skills."
   },
   "plugins": [
     {
       "name": "evaboot-plugin",
       "source": "./",
-      "description": "Build Sales Navigator searches, export leads, find and verify emails through Evaboot's hosted MCP server, and use four skills to define your ICP, qualify leads, read buying signals and draft first messages."
+      "description": "Build Sales Navigator searches, export leads, find and verify emails through Evaboot's hosted MCP server, and use five skills to define your ICP, build a weekly lead pipeline, qualify leads, read buying signals and draft first messages."
     }
   ]
 }
