@@ -1,0 +1,6 @@
+{"layout": "cards", "eyebrow": "evaboot-labs · evaboot-plugin", "headline": "Four skills, one prospecting loop.",
+ "subline": "Each skill uses the Evaboot MCP server and two files in your home folder.",
+ "cards": [{"label": "01 · Define", "title": "Know who you sell to", "quote": "16 questions, saved as your <u>ICP</u> and <u>value prop</u>"},
+           {"label": "02 · Signals", "title": "Spot who is ready", "quote": "Sales Navigator lead and account alerts from the last 7 days"},
+           {"label": "03 · Qualify", "title": "Keep the right ones", "quote": "Each lead marked in, out or can't tell, with the reason"},
+           {"label": "04 · Write", "title": "Say something useful", "quote": "One first message per person. Nothing is sent."}]}

@@ -1,35 +1,70 @@
-# Evaboot plugin for Grok and Cursor
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset=".github/assets/banner-dark.png">
+  <img src=".github/assets/banner-light.png" alt="Describe your ICP, Evaboot builds and exports the Sales Navigator search, finds verified emails, and your agent hands back qualified leads with a first message" width="1280">
+</picture>
 
-Evaboot turns LinkedIn Sales Navigator into a clean lead list. Describe the people you want to reach, and Evaboot builds the Sales Navigator search, exports the leads and accounts it returns, then finds and verifies each lead's professional email. Finished exports can be pushed to a CRM or webhook you connect.
+# The Evaboot plugin
 
-You need an Evaboot account and an active Sales Navigator seat. Exports and email lookups use the credits in your Evaboot plan.
+Evaboot inside your AI Agent: describe who you sell to, and get Sales Navigator leads with verified emails, qualified against your ICP, each with a first message ready to review.
 
-## Install
+[![Works with Claude Code · Codex · Cursor](https://img.shields.io/badge/works%20with-Claude%20Code%20%C2%B7%20Codex%20%C2%B7%20Cursor-5719D9)](AGENTS.md)
+[![MCP server](https://img.shields.io/badge/MCP-mcp.evaboot.com-5719D9)](https://evaboot.com/mcp)
+[![License: MIT](https://img.shields.io/badge/license-MIT-5719D9)](LICENSE)
 
-- **Grok Bot and Cursor:** open Connect Apps (Grok Bot) or the Cursor Marketplace, search for **Evaboot** and add it.
-- **Grok Build:** open Plugins, search for **Evaboot** and install it, or run `grok plugin install https://github.com/evaboot-labs/evaboot-grok-plugin.git`.
+## Set it up in one prompt
 
-On first use, sign in with your Evaboot account on the OAuth consent page.
+Paste this into Claude Code, Codex or Cursor:
 
-Without the plugin, add the server as a custom connector: `https://mcp.evaboot.com/mcp`.
+```text
+Install the Evaboot plugin from https://github.com/evaboot-labs/evaboot-plugin:
+read its AGENTS.md and follow it. Connect the Evaboot MCP server, help me sign
+in, then start by defining my ICP and value prop.
+```
 
-## What the plugin runs, sends and fetches
+<details>
+<summary>Or install it yourself</summary>
 
-- **One remote MCP server**, `https://mcp.evaboot.com/mcp`, run by Evaboot. You sign in with your Evaboot account over OAuth; no API key is stored in the plugin. The agent sends the tool calls you ask for (search descriptions, names and company domains to look up, export ids) to that server, and the server returns your searches, exports, leads and email results. It only reaches data that belongs to your Evaboot account.
-- **Four skills**, plain instructions with no scripts, binaries or network calls of their own. They use the Evaboot tools above and two local files in your home directory:
-  - `define-icp-and-value-prop` interviews you and writes `~/.evaboot/EVABOOT-ICP.md` and `~/.evaboot/EVABOOT-VALUE-PROP.md`.
-  - `qualify-leads` reads `~/.evaboot/EVABOOT-ICP.md` and labels each lead in, out or can't tell.
-  - `intent-detection` lists the last 7 days of Sales Navigator lead and account alerts.
-  - `write-outreach-messages` reads `~/.evaboot/EVABOOT-VALUE-PROP.md` and drafts one first message per person. It never sends anything.
+Claude Code:
 
-No hooks, commands or local servers. Nothing else is installed, run in the background, or sent to any other service.
+```text
+/plugin marketplace add evaboot-labs/evaboot-plugin
+/plugin install evaboot-plugin@evaboot-labs-evaboot-plugin
+```
 
-The full tool list is documented at https://github.com/evaboot-team/evaboot-mcp.
+Codex, Cursor and other agents:
 
-## Support
+```bash
+npx skills add evaboot-labs/evaboot-plugin
+```
 
-Help center: https://help.evaboot.com. Email: support@evaboot.com. Privacy policy: https://evaboot.com/privacy-policy. Terms: https://evaboot.com/terms-of-service.
+Then connect the MCP server: [connect your agent](docs/connect-your-agent.md).
 
-## License
+Grok Build: `grok plugin install https://github.com/evaboot-labs/evaboot-plugin.git`. Grok Bot and the Cursor Marketplace: search for **Evaboot**.
 
-MIT
+</details>
+
+## Four skills, one prospecting loop
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset=".github/assets/skills-dark.png">
+  <img src=".github/assets/skills-light.png" alt="Four skills: define your ICP and value prop, read Sales Navigator alerts, qualify leads, write first messages" width="1280">
+</picture>
+
+Your ICP and value prop live in `~/.evaboot/`, so every later skill reuses them. Your agent can also call every [Evaboot MCP tool](https://github.com/evaboot-team/evaboot-mcp) directly: build a search from one sentence, export a list, find or verify an email, set up a recurring export. Nothing is sent to a prospect: you review every message.
+
+## What you need
+
+- **An Evaboot account:** [sign up](https://dash.evaboot.com/accounts/signup/?last_click_origin=evaboot-plugin-repo). You sign in once over OAuth; no API key to copy.
+- **A LinkedIn Sales Navigator seat**, connected through the [Evaboot Chrome extension](https://dash.evaboot.com/install/).
+- **Cost:** the plugin and the MCP server are free. Exports and email lookups use the credits in your Evaboot plan.
+
+## Go further
+
+| Page | For |
+|---|---|
+| [Connect your agent](docs/connect-your-agent.md) | The MCP setup by hand, per agent |
+| [What the plugin runs and sends](docs/what-it-runs.md) | Security review: the server, the skills, the files they write |
+
+---
+
+Agents: start at [AGENTS.md](AGENTS.md) · Built by [Evaboot](https://evaboot.com) · More workflows at [github.com/evaboot-labs](https://github.com/evaboot-labs) · [MIT license](LICENSE)
